@@ -1,0 +1,19 @@
+body {
+    background-image:url(../img/yourname.jpg) ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 视窗高度 */
+    width: 100vw; /* 视窗宽度 */
+    font-size: larger;
+    
+}
+.text {
+    color: hotpink;
+}
+#love {
+    color: darkorchid;
+}
+p {
+    font-size: 20px;
+    color: aliceblue;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于你</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: hotpink;
+    color: #555;
+    overflow-x: hidden;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  .poem {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  .music {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .music audio {
+    width: 300px;
+  }
+  .music-controls {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .music-controls button {
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  p {
+    font-size: larger;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>about you</h1>
+    <div class="poem">
+      你是我心中的诗，<br>
+      是我梦中的画，<br>
+      是我一生的守候，<br>
+      是我永恒的牵挂。
+    </div>
+  </div>
+  <div class="gallery">
+    <img src="../img2/IMG_20241003_214651.jpg" alt="情侣照片1">
+    <img src="../img2/IMG_20241003_214711.jpg" alt="情侣照片2">
+    <img src="../img2/IMG_20241003_214741.jpg" alt="情侣照片3">
+    <img src="../img2/IMG_20241003_214806.jpg" alt="picture">
+    <img src="../img2/IMG_20241003_214828.jpg" alt="情侣照片1">
+    <img src="../img2/IMG_20241003_213420.jpg" alt="情侣照片1">
+    <img src="../img2/IMG_20241003_213354.jpg" alt="情侣照片2">
+    <img src="../img2/IMG_20241003_213338.jpg" alt="情侣照片1">
+    <img src="../img2/IMG_20241003_213325.jpg">
+    <img src="../img2/IMG_20241003_213314.jpg">
+    <img src="../img2/IMG_20241003_213304.jpg">
+    <!-- 更多情侣照片 -->
+  </div>
+</div>
+
+<div class="music">
+    <p>给你的歌，希望我们如同萤火之森</p><br>
+  <audio id="backgroundMusic" loop>
+    <source src="../music/2682042613.mp3" type="audio/mpeg">
+    你的浏览器不支持音频元素。
+  </audio>
+  <div class="music-controls">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="stopMusic()">停止</button>
+  </div>
+</div>
+
+<script>
+  let isPlaying = false;
+  const music = document.getElementById('backgroundMusic');
+
+  function playPause() {
+    if (isPlaying) {
+      music.pause();
+      isPlaying = false;
+    } else {
+      music.play();
+      isPlaying = true;
+    }
+  }
+
+  function stopMusic() {
+    music.pause();
+    music.currentTime = 0;
+    isPlaying = false;
+  }
+</script>
+
+</body>
+</html>
